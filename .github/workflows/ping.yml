@@ -1,0 +1,14 @@
+name: Ping Hugging Face Space
+
+on:
+  schedule:
+    # Runs at 00:00 UTC every day.
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Space URL
+        run: curl -s -L "https://huggingface.co/spaces/qcsyn/rubriq-demo" > /dev/null
